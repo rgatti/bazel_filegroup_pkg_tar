@@ -1,0 +1,23 @@
+Testing Bazel pkg_tar with a filegroup
+
+When a filegroup points directly to a file or uses the glob() function pkg_tar
+correctly recognizes subdirectory changes. When a filegroup points directly to
+a directory updates to files in the directory are not picked up by pkg_tar.
+
+Tested using Bazel version:
+
+Build target: bazel-out/k8-fastbuild/bin/src/main/java/com/google/devtools/build/lib/bazel/BazelServer_deploy.jar
+Build time: Thu Jan 01 00:00:00 1970 (0)
+Build timestamp: Thu Jan 01 00:00:00 1970 (0)
+Build timestamp as int: 0
+
+To test:
+
+1. Clone this repo
+2. Run ./test.sh
+
+The test.sh:
+
+A simple script that runs a pkg_tar target twice. On each run the src/data file
+is updated. This test is run twice, the first time on a target using the glob()
+function, the second time on a target that isn't.
