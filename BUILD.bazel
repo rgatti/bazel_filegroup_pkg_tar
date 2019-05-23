@@ -1,0 +1,29 @@
+load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
+
+filegroup(
+    name = "works_src",
+    srcs = glob(["src/**"]),
+)
+
+pkg_tar(
+    name = "works",
+    srcs = [":works_src"],
+    mode = "0644",
+    package_dir = "/",
+    strip_prefix = ".",
+)
+
+
+
+filegroup(
+    name = "does_not_work_src",
+    srcs = ["src"],
+)
+
+pkg_tar(
+    name = "does_not_work",
+    srcs = [":does_not_work_src"],
+    mode = "0644",
+    package_dir = "/",
+    strip_prefix = ".",
+)
