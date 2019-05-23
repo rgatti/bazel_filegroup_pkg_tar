@@ -6,10 +6,12 @@ a directory updates to files in the directory are not picked up by pkg_tar.
 
 Tested using Bazel version:
 
-Build target: bazel-out/k8-fastbuild/bin/src/main/java/com/google/devtools/build/lib/bazel/BazelServer_deploy.jar
-Build time: Thu Jan 01 00:00:00 1970 (0)
-Build timestamp: Thu Jan 01 00:00:00 1970 (0)
-Build timestamp as int: 0
+WARNING: --batch mode is deprecated. Please instead explicitly shut down your Bazel server using the command "bazel shutdown".
+Build label: 0.25.2
+Build target: bazel-out/k8-opt/bin/src/main/java/com/google/devtools/build/lib/bazel/BazelServer_deploy.jar
+Build time: Fri May 10 20:47:48 2019 (1557521268)
+Build timestamp: 1557521268
+Build timestamp as int: 1557521268
 
 To test:
 
